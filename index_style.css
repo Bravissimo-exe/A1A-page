@@ -1,0 +1,419 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+/*--------------------------------------------- header*/
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+header {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+
+}
+.logo_title{
+    display:flex;
+    align-items: center;
+    grid: 1;
+}
+a.logo{
+    grid: 1;
+    width: 100px;
+    height: 100px;
+}
+.logo img{
+    width: 100px;
+    padding: 0;
+}
+.title{
+    font-size: 25px;
+    width: 180px;
+    color:#003399;
+    margin: 0;
+}
+nav {
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_nav {
+    grid: 2;
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro del menú */
+    flex: 1;
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    font-size: 2rem;
+}
+nav a {
+    text-decoration: none;
+    color: #003399;
+    font-weight: 900;
+}
+nav a:hover{
+    color: #fe0000;
+}
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    color: #003399;
+    cursor: pointer;
+    border: none;
+    
+    margin: auto;
+    background-color: white;
+}
+.lang-icon{
+    grid: 3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.lang-icon img{
+    width: 60PX;
+    grid-row: 1;
+    margin: auto;
+}
+.dropdown { 
+    grid: 3;
+    grid-row: 2;
+    margin: auto;
+}
+.dropdown-btn {
+    background-color: #003399;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+.dropdown-btn:hover{
+    background-color: white;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+    border: 1px solid #003399;
+    color: #003399;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropdown-btn {
+    background-color: white;
+}
+/*--------------------------------------------- slider*/
+iframe{
+    width:100%; 
+    height:800px;
+}
+.wallpaper_1{
+    background-image:url("/img/work_1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    margin: auto;
+    animation: backgroundChange 20s infinite; /* Animación de 15s en bucle */
+    transition: background-image 3s ease-in; /* Transición suave de fondo */
+}
+@keyframes backgroundChange {
+    0%, 50% {
+        background-image: url("/img/work_1.jpeg");
+    }
+    53%, 96% {
+        background-image: url("/img/work_1_night.jpeg");
+    }
+    100% {
+        background-image: url("/img/work_1.jpeg");
+    }
+}
+p.btn{
+    position: absolute;
+    top: 50%;
+    color: rgb(0, 0, 0);
+    font-size: 1.6rem;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    cursor: pointer;
+}
+.btn.prev{
+    left: 10px;
+}
+.btn.next{
+    right: 10px;
+}
+.hero {
+    background-color: #003399;
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #f0f0f0;
+}
+.btn-outline {
+    background-color: #fff;
+    color: #000;
+    
+}
+.btn-outline:hover {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+section {
+    padding: 4rem 0;
+}
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.stamp{
+    position: absolute; /* Para que no afecte el flujo del contenido */
+    top: -50px;          /* Ajusta esta posición según tus necesidades */
+    right: 330px;       /* Ajusta para mover la imagen hacia un lado */
+    transform: rotate(-15deg); /* Rota la imagen para darle inclinación */
+    opacity: 0.7;       /* Opcional: hace la imagen ligeramente translúcida */
+    z-index: 1;        /* Coloca la imagen detrás del contenido si es necesario */
+    width: 150px;       /* Ajusta el tamaño de la imagen */
+    pointer-events: none; /* Evita que la imagen interfiera con el ratón */
+
+}
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.tab {
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+}
+.tab.active {
+    background-color: #333;
+    color: #fff;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+.contacto button{
+    background-color: #003399;
+    border-radius: 0.25rem;
+    color: white;
+}
+.contacto button:hover{
+    background-color: white;
+    color:black;
+}
+#contacto{
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
+}
+.social_cont{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 300px;   
+}
+.social_cont a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: large;
+}
+.social img{
+    width: 80px;
+}
+.social_link{
+    grid-column: 1;
+}
+.social_text{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column: 2;
+    font-size: larger;
+    font-weight: 700;
+    color: #000;
+}
+.row_1{
+    grid-row: 1;
+}
+.row_2{
+    grid-row: 2;
+}
+.row_3{
+    grid-row: 3;
+}
+.visitanos{
+    text-align: center;
+}
+.visitanos a{
+    font-size: larger;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+}
+.visitanos img{
+    width: 50px;
+}
+footer {
+    background-color: #f0f0f0;
+    padding: 1rem 0;
+    text-align: center;   
+}
+
+/*--------------------------------------------- 1197px*/
+@media (max-width: 1197px) {
+    .menu-toggle {
+        display: block;
+    }
+    /* Ocultar menú principal por defecto en móviles */
+    .menu_nav {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 14%;
+        left: 0;
+        width: 100%;
+    }
+    .menu_nav li {
+        text-align: center;
+        border-top: 1px solid #444;
+    }
+    .menu_nav li a {
+        color: #003399;
+    }
+    /* Mostrar el menú cuando esté activo */
+    .menu_nav.active {
+        display: inline-block;
+    }
+
+    #contacto {
+        grid-template-columns: 1fr;
+    }
+    /* Mostramos el menú en forma de acordeón cuando tiene la clase active */
+}
+/*--------------------------------------------- 414px*/
+@media (max-width: 414px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+    }
+    .title{
+        display: none;
+    }
+    .wallpaper_1{
+        height: 300px;
+        width: 100%;
+    }
+    iframe{
+        height:200px;
+    }
+    form{
+        margin: 0 10% 0 10%;
+    }
+    form .btn{
+        display: block;
+        margin: auto;
+    }
+    .social{
+        margin-top: 15%;
+    }
+    .social_text{
+        align-items: center;
+    }
+    .social_link{
+        margin-left: 10%;
+    }
+    .stamp{
+        position: absolute; /* Para que no afecte el flujo del contenido */
+        top: -100px;          /* Ajusta esta posición según tus necesidades */
+        right: 140px;       /* Ajusta para mover la imagen hacia un lado */
+        transform: rotate(-15deg); /* Rota la imagen para darle inclinación */
+        opacity: 0.7;       /* Opcional: hace la imagen ligeramente translúcida */
+        z-index: 1;        /* Coloca la imagen detrás del contenido si es necesario */
+        width: 100px;       /* Ajusta el tamaño de la imagen */
+        pointer-events: none; /* Evita que la imagen interfiera con el ratón */
+    
+    }
+}
